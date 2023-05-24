@@ -31,7 +31,7 @@ SCRIPTPATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DEBIANS="debian-buster debian-bullseye"
 UBUNTUS="ubuntu-bionic ubuntu-focal ubuntu-jammy"
 CENTOSES="centos-7 centos-8 centos-9"
-XPLAT_BASES="debian-bullseye ubuntu-focal"
+XPLAT_BASES="debian-bullseye ubuntu-focal ubuntu-jammy centos-8 centos-9"
 XPLAT_ARCHES="arm64 ppc64le s390x"
 BINARY_API="https://apache.jfrog.io/artifactory"
 ERLANGVERSION=${ERLANGVERSION:-24.3.4.10}
@@ -112,8 +112,6 @@ build-all-couch() {
       CONTAINERARCH="${arch}" build-couch ${base}
     done
   done
-  CONTAINERARCH="s390x" build-couch centos-8
-  CONTAINERARCH="s390x" build-couch centos-9
 }
 
 
