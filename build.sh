@@ -109,7 +109,9 @@ build-all-couch() {
   done
   for base in $XPLAT_BASES; do
     for arch in $XPLAT_ARCHES; do
-      CONTAINERARCH="${arch}" build-couch ${base}
+      if [[ ${base} != "centos-8" ]] || [[ ${arch} != "arm64" ]]; then
+        CONTAINERARCH="${arch}" build-couch ${base}
+      fi
     done
   done
 }

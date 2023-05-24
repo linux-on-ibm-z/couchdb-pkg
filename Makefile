@@ -181,10 +181,10 @@ almalinux-8: centos-8
 almalinux-9: centos-9
 # s390x RHEL 8 clone based
 s390x-centos-8: centos-8
-arm64-centos-8: centos-8
 ppc64le-centos-8: centos-8
 # s390x RHEL 9 clone based
 s390x-centos-9: centos-9
+arm64-centos-9: PKGARCH=aarch64
 arm64-centos-9: centos-9
 ppc64le-centos-9: centos-9
 
